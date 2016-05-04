@@ -1,0 +1,6 @@
+User->Node.js: POST Message (ex: curl)
+Node.js->Restivus Module: Perform REST Operation
+Restivus Module->Mongo: Add Collection Entry
+Mongo->Restivus Module:
+Restivus Module->Node.js:
+Node.js->User:

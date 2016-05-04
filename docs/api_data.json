@@ -1,0 +1,350 @@
+[
+  {
+    "type": "delete",
+    "url": "/api/v1/messages",
+    "title": "Remove Message",
+    "version": "0.1.0",
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl -i -X DELETE http://localhost:3000/api/v1/messages/hLRsday5aqhByzqkx",
+        "type": "curl"
+      }
+    ],
+    "name": "DeleteMessage",
+    "group": "Messages",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "_id",
+            "description": "<p>The _id of the message.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>REST operation status.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Object with key &quot;message&quot; stating the executed operation.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\": \"success\",\n  \"data\": {\n    \"message\": \"Item removed\"\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "NotFound",
+            "description": "<p>The message with the specified _id was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n  \"status\": \"fail\",\n  \"message\": \"Item not found\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "imports/api/rest/server/rest.js",
+    "groupTitle": "Messages"
+  },
+  {
+    "type": "get",
+    "url": "/api/v1/messages/:_id",
+    "title": "Get Specified Message",
+    "version": "0.1.0",
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl -i -X GET \"http://localhost:3000/api/v1/messages/hLRsday5aqhByzqkx\"",
+        "type": "curl"
+      }
+    ],
+    "name": "GetMessage",
+    "group": "Messages",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "_id",
+            "description": "<p>The _id of the message.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>REST operation status.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "data",
+            "description": "<p>The message object.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\": \"success\",\n  \"data\": {\n    \"_id\": \"hLRsday5aqhByzqkx\",\n    \"text\": \"laval\",\n    \"createdAt\": \"2016-05-01T00:42:42.553Z\"\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "NotFound",
+            "description": "<p>The message with the specified _id was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n  \"status\": \"fail\",\n  \"message\": \"Item not found\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "imports/api/rest/server/rest.js",
+    "groupTitle": "Messages"
+  },
+  {
+    "type": "get",
+    "url": "/api/v1/messages",
+    "title": "Get Messages",
+    "version": "0.1.0",
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl -i -X GET http://localhost:3000/api/v1/messages",
+        "type": "curl"
+      }
+    ],
+    "name": "GetMessages",
+    "group": "Messages",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>REST operation status.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "data",
+            "description": "<p>List of all messages.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"_id\": \"hLRsday5aqhByzqkx\",\n      \"text\": \"laval\",\n      \"createdAt\": \"2016-05-01T00:42:42.553Z\"\n    }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "imports/api/rest/server/rest.js",
+    "groupTitle": "Messages"
+  },
+  {
+    "type": "get",
+    "url": "/api/v1/messages/:_id/is_palindrome",
+    "title": "Is Specified Message A Palindrome",
+    "version": "0.1.0",
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl -i -X GET \"http://localhost:3000/api/v1/messages/hLRsday5aqhByzqkx/is_palindrome\"",
+        "type": "curl"
+      }
+    ],
+    "name": "IsMessagePalindrome",
+    "group": "Messages",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "_id",
+            "description": "<p>The _id of the message.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>REST operation status.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "data",
+            "description": "<p>Object with key &quot;palindrome&quot; set to either true or false.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"status\": \"success\",\n  \"data\": {\n    \"palindrome\": true\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "NotFound",
+            "description": "<p>The message with the specified _id was not found.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{\n  \"status\": \"fail\",\n  \"message\": \"Message not found\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "imports/api/rest/server/rest.js",
+    "groupTitle": "Messages"
+  },
+  {
+    "type": "post",
+    "url": "/api/v1/messages",
+    "title": "Add New Message",
+    "version": "0.1.0",
+    "examples": [
+      {
+        "title": "Example usage:",
+        "content": "curl -i -X POST \"http://localhost:3000/api/v1/messages/\" -d \"text=laval\"",
+        "type": "curl"
+      }
+    ],
+    "name": "PostMessage",
+    "group": "Messages",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "text",
+            "description": "<p>Content of the message.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "status",
+            "description": "<p>REST operation status.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "data",
+            "description": "<p>The message object.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 201 Created\n{\n  \"status\": \"success\",\n  \"data\": {\n    \"_id\": \"hLRsday5aqhByzqkx\",\n    \"text\": \"laval\",\n    \"createdAt\": \"2016-05-01T00:42:42.553Z\"\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "TextIsRequired",
+            "description": "<p>The text parameter of the message was not provided.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 500 Internal Server Error\nError: Text is required",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "imports/api/rest/server/rest.js",
+    "groupTitle": "Messages"
+  }
+]

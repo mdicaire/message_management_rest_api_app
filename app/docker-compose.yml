@@ -1,0 +1,12 @@
+dashboard:
+  image: mdicaire/app
+  ports:
+   - "3000:80"
+  links:
+   - mongo
+  environment:
+   - ROOT_URL=http://localhost_app
+   - MONGO_URL=mongodb://mongo/app
+
+mongo:
+  image: mongo:latest

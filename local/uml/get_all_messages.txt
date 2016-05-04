@@ -1,0 +1,6 @@
+User->Node.js: GET Messages (ex: curl)
+Node.js->>Restivus Module: Perform REST Operation
+Restivus Module->Mongo: Get Collection Entries
+Mongo->Restivus Module:
+Restivus Module->Node.js:
+Node.js->User:

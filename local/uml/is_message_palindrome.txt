@@ -1,0 +1,9 @@
+User->Node.js: GET MessageIsPalindrome (ex: curl)
+Node.js->Restivus Module: Perform REST Operation
+Restivus Module->Javascript: Is Message Palindrome
+Javascript->Mongo: Get Message
+Mongo->Javascript:
+Javascript->Javascript: isPalindrome
+Javascript->Restivus Module:
+Restivus Module->Node.js:
+Node.js->User:
