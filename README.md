@@ -79,7 +79,7 @@ The UI:
 
 ## REST API documentation
 
-Please see ./docs/index.html for the [![REST API Documentation](./docs/index.html?raw=true)]
+Please see ./docs/index.html for the REST API [Documentation](https://cdn.rawgit.com/mdicaire/message_management_rest_api_app/master/docs/index.html)
 
 ## Automation
 
