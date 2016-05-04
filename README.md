@@ -9,16 +9,16 @@ You can find the latest code on [GitHub](https://github.com/mdicaire/message_man
 The app has been designed to expose a REST API interface to manage a collection of messages.
 
 The app uses many different modules and tools to perform the following operations:
-The Restivus module is used to provide the REST API.
-The Blaze module is used to provide a UI to interact with the service.
-Meteor.js, mocha, phantomjs and curl are used to run automated tests.
-Meteor.js, MeteorD and docker are used to build a docker container of the app and deploy it.
+- The Restivus module is used to provide the REST API.
+- The Blaze module is used to provide a UI to interact with the service.
+- Meteor.js, mocha, phantomjs and curl are used to run automated tests.
+- Meteor.js, MeteorD and docker are used to build a docker container of the app and deploy it.
 
 The project has been segmented as follows:
-./app/: Meteor.js app with REST API
-./deploy/: docker container build and deployment scripts
-./local/: automated app testing, rest api documentation generation and diagram generation
-./docs/: generated documentation
+- ./app/: Meteor.js app with REST API
+- ./deploy/: docker container build and deployment scripts
+- ./local/: automated app testing, rest api documentation generation and diagram generation
+- ./docs/: generated documentation
 
 ## Use Case Sequence Diagrams
 
@@ -83,4 +83,4 @@ Please see ./docs/index.html for the REST API [Documentation](https://cdn.rawgit
 
 ## Automation
 
-Continuous Integration script (build, test and deploy): ./local/ci.sh
+A continuous integration script located in ./local/ci.sh can be used to build, test and deploy the app
