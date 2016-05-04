@@ -15,7 +15,7 @@ The app uses many different modules and tools to perform the following operation
 - Meteor.js, MeteorD and docker are used to build a docker container of the app and deploy it.
 
 The project has been segmented as follows:
-- ./app/: Meteor.js app with REST API
+- ./app/: Meteor.js app with REST API and service UI
 - ./deploy/: docker container build and deployment scripts
 - ./local/: automated app testing, rest api documentation generation and diagram generation
 - ./docs/: generated documentation
