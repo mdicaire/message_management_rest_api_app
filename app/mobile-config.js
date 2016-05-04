@@ -2,11 +2,11 @@
 /* eslint-disable quote-props */
 
 App.info({
-  name: 'Todos',
-  description: 'A simple todo list app built in Meteor.',
-  author: 'Percolate Studio Team',
-  email: 'us@percolatestudio.com',
-  website: 'http://percolatestudio.com',
+  name: 'MessageManagementRESTAPI',
+  description: 'A message management rest api app built in Meteor.',
+  author: 'Martin Dicaire',
+  email: 'mdicaire.dev@gmail.com',
+  website: 'https://github.com/mdicaire/message_management_rest_api_app',
   version: '0.0.1',
 });
 

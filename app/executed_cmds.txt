@@ -1,2 +1,0 @@
-meteor npm install --save sass stylus less markdown discount
-markdown-js marked coffee-script browser growl jade

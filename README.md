@@ -1,12 +1,12 @@
 # Message Management REST API App
 
-This app provides a REST API to MongoDB and offers a UI to interact with the server.
+This app provides a REST API to MongoDB and offers a UI to interact with the server
 
 You can find the latest code on [GitHub](https://github.com/mdicaire/message_management_rest_api_app)
 
 ## Implementation Architecture Description
 
-The app has been designed to expose a REST API interface to manage a collection of messages.
+The app has been designed to expose a REST API interface to manage a collection of messages
 
 The app uses many different modules and tools to perform the following operations:
 - The Restivus module is used to provide the REST API.
@@ -19,6 +19,12 @@ The project has been segmented as follows:
 - ./deploy/: docker container build and deployment scripts
 - ./local/: automated app testing, rest api documentation generation and diagram generation
 - ./docs/: generated documentation
+
+Meteor was used to generate application structure using the standard todo app boilerplate representing the best practices in Meteor 1.3 (latest). The implementation structure is as follows:
+- ./app/imports/api/messages/: message collection and palindrome checking
+- ./app/imports/api/rest/server/: rest api
+- ./app/imports/ui/: ui to interact with the service
+- ./app/imports/startup/: ui routes definition and rest api registration 
 
 ## Use Case Sequence Diagrams
 
@@ -35,23 +41,25 @@ The project has been segmented as follows:
 
 ### Building
 
-To build the app into a docker container, run the build_docker.sh script under the deploy folder.
+To build the app into a docker container, run the build_docker.sh script under the deploy folder
 
 ```bash
 cd "deploy"
 ./build_docker.sh
 ```
 
-It is also possible to build and run the app using the meteor app
+It is also possible to build and run the app using the meteor binary
 
 ```bash
 cd "app"
 meteor
 ```
 
+Note: meteor.js is built on top of node.js and it uses node to run the app
+
 ### Testing
 
-You can run functional and system tests by running the run_tests.sh script in under the local folder.
+You can run functional and system tests by running the run_tests.sh script in under the local folder
 
 ```bash
 cd "local"
@@ -85,11 +93,11 @@ Please see ./docs/index.html for the REST API [Documentation](https://cdn.rawgit
 
 ## Automation
 
-A continuous integration script located in ./local/ci.sh can be used to build, test and deploy the app.
+A continuous integration script located in ./local/ci.sh can be used to build, test and deploy the app
 
 ```bash
 cd "local"
 ./ci.sh
 ```
 
-Note: A non-zero return code will be returned on error.
+Note: A non-zero return code will be returned on error
