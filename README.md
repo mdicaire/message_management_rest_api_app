@@ -62,6 +62,8 @@ Note: the REST API operations will be tested and eslint will also be executed on
 
 ### Deployment
 
+You can deploy the previously built docker container after setting your environment to point to your target docker daemon
+
 ```bash
 cd "deploy"
 ./deploy_app.sh
@@ -83,4 +85,11 @@ Please see ./docs/index.html for the REST API [Documentation](https://cdn.rawgit
 
 ## Automation
 
-A continuous integration script located in ./local/ci.sh can be used to build, test and deploy the app
+A continuous integration script located in ./local/ci.sh can be used to build, test and deploy the app.
+
+```bash
+cd "local"
+./ci.sh
+```
+
+Note: A non-zero return code will be returned on error.
